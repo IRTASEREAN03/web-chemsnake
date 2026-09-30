@@ -1,0 +1,78 @@
+:root{--bg:#eef3e2;--ink:#1f3a26;--muted:#4b6350;--card:#fffdf6;--leaf:#3f7d3a;--peach:#f7c4ad;--coral:#e0566b;--line:#c9d8b5;--btn-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14231a;--ink:#eaf3dd;--muted:#a9c0a8;--card:#1d3324;--leaf:#7fc46f;--peach:#f7c4ad;--coral:#f0788a;--line:#2f4b37}}
+:root[data-theme="dark"]{--bg:#14231a;--ink:#eaf3dd;--muted:#a9c0a8;--card:#1d3324;--leaf:#7fc46f;--peach:#f7c4ad;--coral:#f0788a;--line:#2f4b37}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bagel Fat One','Arial Rounded MT Bold',Impact,sans-serif;font-weight:400;line-height:1.1;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch}
+.btn{display:inline-block;border:0;cursor:pointer;font:800 1rem Nunito,sans-serif;background:var(--coral);color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+/* hero */
+.hero{background:linear-gradient(180deg,#3f7d3a 0%,#2d5c2c 100%);color:#fff;padding:48px 0 64px;overflow:hidden}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(3rem,10vw,6rem);color:#fff;text-shadow:0 5px 0 rgba(0,0,0,.25);transform:rotate(-2deg);display:inline-block}
+.hero .tag{font-family:'Bagel Fat One',sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);color:var(--peach);margin:18px 0 12px;line-height:1.15}
+.hero p{max-width:46ch;color:#e6f2d8}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero .btn.alt{color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.poster{margin:0;justify-self:center;max-width:380px;width:100%;transform:rotate(2.5deg);border-radius:18px;overflow:hidden;box-shadow:0 18px 0 rgba(0,0,0,.18),0 30px 50px rgba(0,0,0,.35);border:6px solid #fffdf6;background:#fffdf6}
+.poster img{display:block;width:100%;height:auto}
+/* about */
+.grid3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);margin-top:28px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:24px}
+.card:nth-child(2){border-radius:22px 22px 22px 60px}
+.card h3{font-size:1.4rem;margin-bottom:8px}
+.card .em{font-size:2rem}
+/* steps */
+.steps{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px 20px}
+.steps li::before{content:counter(s);font-family:'Bagel Fat One',sans-serif;font-size:1.6rem;width:48px;height:48px;border-radius:50%;background:var(--peach);color:#5a2a1c;display:grid;place-items:center}
+.steps b{display:block}
+.ladder{color:var(--leaf);font-weight:800}.snake{color:var(--coral);font-weight:800}
+/* demo */
+.demo{background:var(--card);border-block:2px solid var(--line)}
+.game{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;margin-top:28px}
+.board{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.cell{aspect-ratio:1;border-radius:12px;background:var(--bg);border:2px solid var(--line);position:relative;font-weight:800;font-size:.8rem;padding:4px 6px;display:flex;flex-direction:column;justify-content:space-between}
+.cell small{font-size:.7rem;font-weight:700}
+.cell.up{background:#cfe8b8;color:#1f3a26}.cell.down{background:#f7c9d0;color:#5a1a28}.cell.goal{background:var(--peach);color:#5a2a1c}
+.token{position:absolute;right:6px;bottom:6px;width:26px;height:26px;border-radius:50%;background:var(--coral);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.4);transition:transform .3s}
+.panel{display:grid;gap:14px;align-content:start}
+.dice{font-family:'Bagel Fat One',sans-serif;font-size:2.2rem;background:var(--peach);color:#5a2a1c;border-radius:20px;text-align:center;padding:16px;min-height:88px;display:grid;place-items:center}
+.dice.roll{animation:shake .5s}
+@keyframes shake{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+.q{font-weight:800}
+.opts{display:grid;gap:8px}
+.opt{font:700 1rem Nunito,sans-serif;text-align:left;padding:12px 16px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--leaf)}
+.opt.ok{background:#cfe8b8;color:#1f3a26;border-color:#3f7d3a}.opt.no{background:#f7c9d0;color:#5a1a28;border-color:#e0566b}
+.msg{min-height:3em;font-weight:700}
+/* who */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-34px;position:relative}
+.stat{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px;text-align:center;box-shadow:0 5px 0 var(--line)}
+.stat b{display:block;font-family:'Bagel Fat One',sans-serif;font-weight:400;font-size:1.5rem;color:var(--coral)}
+.stat span{font-size:.9rem;color:var(--muted)}
+.tiles{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:28px}
+.tile{background:var(--card);border:2px solid var(--line);border-left:10px solid var(--c);border-radius:18px;padding:18px 20px}
+.tile h3{font-size:1.25rem;margin-bottom:6px}.tile p{margin:0;font-size:.97rem}
+.tile .ex{display:inline-block;margin-top:8px;font-weight:800;font-size:.85rem;background:var(--c);color:#fff;border-radius:999px;padding:2px 12px}
+.hearts{font-size:1.6rem;letter-spacing:4px}
+.status{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-weight:800}
+.badge{background:#cfe8b8;color:#1f3a26;border-radius:999px;padding:2px 12px;font-size:.85rem}
+.cell.bomb{background:#f7c9d0;color:#5a1a28}.cell.shield{background:#cde3f5;color:#123554}.cell.heal{background:#d7f0d0;color:#1f4a24}
+.cell b{font-size:1.15rem;font-family:'Bagel Fat One',sans-serif;font-weight:400;line-height:1}
+.note{font-size:.85rem;color:var(--muted)}
+.who{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.who .card{background:var(--peach);border-color:transparent;color:#4a2416}
+.who .card:nth-child(2){background:var(--leaf);color:#fff;border-radius:22px}
+footer{padding:40px 0;text-align:center;color:var(--muted)}
+footer strong{font-family:'Bagel Fat One',sans-serif;font-weight:400;font-size:1.6rem;color:var(--ink);display:block}
+@media(max-width:820px){.hero .wrap,.game,.who,.grid3,.tiles{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.poster{order:-1;max-width:300px}section{padding:48px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

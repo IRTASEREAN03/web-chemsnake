@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ChemSnake – Ular Tangga Kimia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <h1>ChemSnake</h1>
+   <p class="tag">Uji strategimu, kuasai kimiamu!</p>
+   <p>Ular tangga bertema tabel periodik dengan sistem survival. Kamu punya 3 nyawa, papan penuh unsur yang bisa meledak, melindungi, atau memulihkan. Sampai finish lebih dulu, tanpa kehabisan nyawa.</p>
+   <div class="cta"><a class="btn" href="#coba">Coba mini game</a><a class="btn alt" href="#cara">Lihat cara main</a></div>
+  </div>
+  <figure class="poster"><img src="assets/poster.jpg" alt="Poster ChemSnake: dua pelajar berdiri di papan ular tangga di tengah hutan, sebuah tangan memegang dadu berisi rumus kimia"></figure>
+ </div>
+</header>
+
+<div class="wrap"><div class="stats">
+ <div class="stat"><b>2–4</b><span>pemain</span></div><div class="stat"><b>20–30</b><span>menit</span></div><div class="stat"><b>13+</b><span>usia</span></div><div class="stat"><b>3 ❤️</b><span>nyawa tiap pemain</span></div>
+</div></div>
+
+<section id="tentang"><div class="wrap">
+ <h2>Ular tangga dengan taruhan nyawa</h2>
+ <p class="lead">ChemSnake memadukan ular tangga klasik dengan tabel periodik dan sistem survival. Setiap petak adalah unsur kimia dengan efek khusus, dari serangan sampai pemulihan. Tiap giliran menentukan: salah langkah bisa membuatmu tereliminasi.</p>
+ <div class="grid3">
+  <div class="card"><div class="em">💥</div><h3>Tegang</h3><p>Unsur reaktif dan radioaktif bertindak sebagai bom. Hitung sisa nyawamu sebelum melangkah.</p></div>
+  <div class="card"><div class="em">🧠</div><h3>Penuh strategi</h3><p>Cari perisai dan pemulih, hindari bom, lalu manfaatkan tangga untuk melompat maju.</p></div>
+  <div class="card"><div class="em">🧪</div><h3>Belajar sambil bersaing</h3><p>Kamu mengenal sifat reaktif, kestabilan, dan karakter unsur tabel periodik dengan cara yang seru.</p></div>
+ </div>
+</div></section>
+
+<section id="petak" style="padding-top:0"><div class="wrap">
+ <h2>Kenali petak unsurnya</h2>
+ <p class="lead">Papan disusun dari enam jenis petak. Baca efeknya sebelum melempar dadu.</p>
+ <div class="tiles">
+  <div class="tile" style="--c:#7a8a70"><h3>Petak Standar</h3><p>Petak unsur biasa. Selesaikan soal kimia sederhana untuk mengamankan posisimu.</p></div>
+  <div class="tile" style="--c:#d6455d"><h3>💥 Petak Penghancur</h3><p>Unsur radioaktif atau sangat reaktif bertindak sebagai bom dan mengurangi 1 nyawa.</p><span class="ex">Fransium, Uranium</span></div>
+  <div class="tile" style="--c:#3b82c4"><h3>🛡️ Petak Pelindung</h3><p>Unsur stabil memberi perisai yang mencegah pengurangan nyawa di giliran berikutnya.</p><span class="ex">Gas mulia</span></div>
+  <div class="tile" style="--c:#3f9b4a"><h3>💚 Petak Pemulih</h3><p>Unsur vital menambah 1 nyawa yang hilang. Nyawa maksimal tetap 3.</p><span class="ex">Oksigen, Kalsium</span></div>
+  <div class="tile" style="--c:#6b9e2e"><h3>🪜 Tangga Reaksi</h3><p>Petak tangga membuatmu melompat maju, sesuai hasil tantangan reaksi kimia.</p></div>
+  <div class="tile" style="--c:#e08a4a"><h3>🐍 Ular Pelarutan</h3><p>Petak ular membawamu turun, sesuai hasil tantangan reaksi kimia.</p></div>
+ </div>
+</div></section>
+
+<section id="cara" style="padding-top:0"><div class="wrap">
+ <h2>Cara main</h2>
+ <ol class="steps">
+  <li><div><b>Siapkan permainan</b>Kumpulkan 2–4 pemain. Setiap pemain memulai dengan 3 bar nyawa penuh.</div></li>
+  <li><div><b>Lempar dadu dan melangkah</b>Jumlah mata dadu menentukan berapa petak yang kamu tempuh.</div></li>
+  <li><div><b>Jalankan efek petak</b>Bom mengurangi nyawa, perisai melindungimu, pemulih menambah nyawa, dan petak standar menantangmu dengan soal kimia.</div></li>
+  <li><div><b>Manfaatkan <span class="ladder">tangga</span>, waspadai <span class="snake">ular</span></b>Hasil tantangan reaksi kimia menentukan kamu melompat maju atau turun.</div></li>
+  <li><div><b>Jaga nyawa sampai finish</b>Jika 3 bar nyawa habis, kamu tereliminasi. Capai garis finish dengan strategi terbaik.</div></li>
+ </ol>
+</div></section>
+
+<section id="coba" class="demo"><div class="wrap">
+ <h2>Coba versi mininya</h2>
+ <p class="lead">Simulasi solo dengan 20 petak. Lempar dadu, hadapi efek petak, dan sampai finish sebelum nyawamu habis.</p>
+ <div class="game">
+  <div class="board" id="board" aria-label="Papan mini ChemSnake"></div>
+  <div class="panel">
+   <div class="status"><span class="hearts" id="hearts" aria-live="polite"></span><span class="badge" id="shield" hidden>🛡️ Perisai aktif</span></div>
+   <div class="dice" id="dice" aria-live="polite">🎲</div>
+   <button class="btn" id="roll">Lempar dadu</button>
+   <div id="qbox" hidden><p class="q" id="qtext"></p><div class="opts" id="opts"></div></div>
+   <p class="msg" id="msg" aria-live="polite">Tekan “Lempar dadu” untuk mulai.</p>
+   <p class="note">Versi mini disederhanakan: soal salah di petak standar membuatmu mundur 1 petak. Aturan asli ada di papan permainan.</p>
+  </div>
+ </div>
+</div></section>
+
+<section id="untuk"><div class="wrap">
+ <h2>Untuk siapa?</h2>
+ <div class="who">
+  <div class="card"><h3>Remaja 13 tahun ke atas</h3><p>Terutama pelajar SMP dan SMA, dan siapa saja yang ingin belajar kimia dengan cara yang lebih seru dan tidak membosankan.</p></div>
+  <div class="card"><h3>Ajak temanmu</h3><p>Mainkan ChemSnake bersama 1–3 temanmu. Belajar kimia jadi lebih seru sambil bersaing.</p></div>
+ </div>
+ <p style="margin-top:32px"><a class="btn" href="#coba">Main lagi</a></p>
+</div></section>
+
+<footer><div class="wrap"><strong>ChemSnake</strong>Uji strategimu, kuasai kimiamu!</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
